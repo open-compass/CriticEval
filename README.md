@@ -18,12 +18,13 @@ Xian-ling Mao<sup>1†</sup>
 <sup>1</sup> Beijing Institute of Technology, <sup>2</sup> Shanghai AI Laboratory
 
 <!-- [Arxiv Report](https://arxiv.org/abs/2307.04725) | [Project Page](https://animatediff.github.io/) -->
-[[Project Page](https://open-compass.github.io/CriticBench/)]
-[[LeaderBoard](https://open-compass.github.io/CriticBench/leaderboard.html)]
-[[HuggingFace](https://huggingface.co/datasets/GMFTBY/CriticBench)]
 
 [![arXiv](https://img.shields.io/badge/arXiv-2307.04725-b31b1b.svg)](https://arxiv.org/abs/2307.04725)
 [![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
+
+[[[Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/GMFTBY/CriticBench)]
+[[Project Page](https://open-compass.github.io/CriticBench/)]
+[[LeaderBoard](https://open-compass.github.io/CriticBench/leaderboard.html)]
 
 > Critique ability are crucial in the scalable oversight and self-improvement of Large Language Models (LLMs). While many recent studies explore the critique ability of LLMs to judge and refine flaws in generations, how to comprehensively and reliably measure the critique abilities of LLMs is under-explored. This paper introduces <b>CriticBench</b>, a novel benchmark designed to comprehensively and reliably evaluate four key critique ability dimensions of LLMs: feedback, comparison, refinement and meta-feedback. <b>CriticBench</b> encompasses nine diverse tasks, each assessing the LLMs' ability to critique responses at varying levels of quality granularity. Our extensive evaluations of open-source and closed-source LLMs reveal intriguing relationships between the critique ability and tasks, response qualities, and model scales.
 
@@ -47,22 +48,66 @@ Xian-ling Mao<sup>1†</sup>
 
 The CriticBench dataset are released in `data/criticbench_v1.3`, containing evaluation samples for `test` and `dev` split.
 
-### 1. Prepare Dataset
+### 1. Prepare
 
-#### In this Repo
+#### 1.1 Prepare Dataset
 
-We have provided the `test` and `dev` set of CriticBench in this repo `data/criticbench_v1.3`
-
-#### In Huggingface Dataset
-
+We have provided the `test` and `dev` set of CriticBench in this repo `data/criticbench_v1.3`.
 You can also download the dataset from [huggingface dataset](https://huggingface.co/datasets/GMFTBY/CriticBench).
 
-### 1. Inference LLMs on CriticBench
+#### 1.2 Prepare Code and Env
 
-Firstly, you need to inference LLMs to be evaluated on our proposed CriticBench, and generation results on CriticBench can be found in `inference/outputs` folder. 
+```bash
+git clone https://github.com/open-compass/CriticBench.git
+# prepare the env for evaluation toolkit
+cd critic_bench
+pip install -r requirements.txt
+# prepare the env for LLM inference
+cd ../inference
+pip install -r requirements.txt
+```
 
+### 2. Inference LLMs on CriticBench
+
+You need to inference LLMs to be evaluated on our proposed CriticBench, and generation results on CriticBench can be found in `inference/outputs` folder. 
 If you are interested with our prompts for LLM, they are shown in `inference/utils/prompts.py`.
-Note that we only provide the inference codebase for our [InternLM2-7B-Chat](https://huggingface.co/internlm/internlm2-chat-7b), but it is easy to revise the inference code for evaluating your own LLMs (more details are in `inference/internlm2.py`).
+Specifically, the inference code should be like:
+```python
+# this line loads all the evaluation dataset in CriticBench from `inference/utils`
+datasets = load_all_datasets(args['data_dir'])
+
+# these lines init the tokenizer and models from huggingface
+tokenizer = AutoTokenizer.from_pretrained(
+    args['model_name'],
+    trust_remote_code=True
+)
+model = AutoModelForCausalLM.from_pretrained(
+    args['model_name'], 
+    device_map="auto", 
+    trust_remote_code=True
+).cuda().eval()
+
+...
+
+# inference the LLM and save the results in json file format
+for abbr, dataset in tqdm(datasets.items()):
+    path = os.path.join(folder_path, abbr + ".json")
+    results = {}
+    for item in tqdm(dataset['dev']):        
+        
+        # If you want to inference other LLMs, please revise this line
+        response, history = model.chat(tokenizer, item['question'], history=[])
+            
+        results[str(len(results))] = {
+            'origin_prompt': item['question'],
+            'prediction': response
+        }
+    # save the results into json file, with the abbr as the file name
+    with open(path, 'w') as f:
+        json.dump(results, f, ensure_ascii=False, indent=4)
+```
+
+We only provide the inference codebase for our [InternLM2-7B-Chat](https://huggingface.co/internlm/internlm2-chat-7b), but it is easy to revise the inference code for evaluating your own LLMs (more details are in `inference/internlm2.py`).
 
 #### Example Inference Data of Representative LLMs
 
@@ -87,7 +132,7 @@ The format of the evaluation result file is:
 }
 ```
 
-### 2. Compute the Evaluation Results on CriticBench
+### 3. Compute the Evaluation Results on CriticBench
 
 After getting the generation results under `inference/outputs`, your next step is to compute the objective and subjective scores in our proposed CriticBench using our toolkit.
 See more details about the objective and subjective scores in Section 4 of [our paper]().
@@ -95,12 +140,6 @@ See more details about the objective and subjective scores in Section 4 of [our 
 We provide two ways for computing the `objective` and `subjective` scores in `critic_bench` folder.
 * Objective scores could be computed automatically without any cost
 * Subjective scores rely on the advanced GPT-4-turbo model for automatic evaluation
-
-#### Prepare Environment
-
-```bash
-pip install -r requirements.txt
-```
 
 #### Compute Scores
 
@@ -145,7 +184,7 @@ The evaluation results of GPT-4 under `save_dir` is `jsonl`, and each line conta
 * 10 denotes the best performance
 * 8 denotes the comparable performance with our human-annotated high-quality critiques, and scores higher than 8 denotes the better performance of evaluated critiques.
 
-## Benchmark Results
+## 4. Benchmark Results
 
 The subjective evaluation results of some representation LLMs are shown:
 
@@ -157,21 +196,22 @@ The Objective evaluation results of some representation LLMs are shown:
 
 Refer to our [Project Page](https://open-compass.github.io/CriticBench/) for the evaluation results of the complete models.
 
-## Submit Your Results
+## 5. Submit Your Results
 
 You can submit your inference results (via run codes under `inference` folder) to this [email](lantiangmftby@gmail.com). We will run your predictions and update the results in our leaderboard. Please also provide the scale of your tested model. A sample structure of your submission should be similar to that in `example_data`.
 
-## Acknowledgements
+## 6. Acknowledgements
 
-<b>CriticBench</b> is built with [OpenCompass](https://github.com/open-compass/opencompass). Thanks for their awesome work!
+<b>CriticBench</b> is built with [OpenCompass](https://github.com/open-compass/opencompass). Thanks for their awesome work! 
 
-## Contact Us
+The quota for API-based LLMs are supported by Beijing Institute of Technology and Shanghai AI Laboratory. Thank you so much!
 
-**Tian Lan**: lantiangmftby@gmail.com
+## 7. Contact Us
 
-**Wenwei Zhang**: wenwei001@ntu.edu.sg
+* **Tian Lan**: lantiangmftby@gmail.com
+* **Wenwei Zhang**: wenwei001@ntu.edu.sg
 
-## BibTeX
+## 8. BibTeX
 
 ```
 @misc{lan2024criticbench,
@@ -183,4 +223,8 @@ You can submit your inference results (via run codes under `inference` folder) t
       primaryClass={cs.CL}
 }
 ```
+
+## 9. License
+
+This project is released under the Apache 2.0 [license](./LICESE).
 

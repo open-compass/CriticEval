@@ -1,0 +1,37 @@
+Model,feedback,correction,comparison,meta_feedback,overall,opensourced,link
+GPT-4-turbo,63.54,69.67,57.33,62.90,72.55,FALSE,https://openai.com/blog/new-models-and-developer-products-announced-at-devday
+GLM4-no-tool,69.35,60.67,58.00,47.92,69.33,FALSE,https://zhipuai.cn/devday
+ErnieBot Pro,64.59,59.33,55.11,54.60,68.51,FALSE,-
+GPT-3.5-turbo,51.44,64.00,40.67,28.71,61.19,FALSE,https://openai.com/blog/new-models-and-developer-products-announced-at-devday
+Claude-instant-1,42.78,50.00,44.89,38.89,58.93,FALSE,https://www.anthropic.com/product
+Qwen-Max,57.88,59.34,50.22,45.64,65.33,FALSE,https://dashscope.aliyun.com/
+Gemini-Pro,47.27,56.67,31.33,44.25, 58.44,FALSE,https://deepmind.google/technologies/gemini/
+Baichuan2 Turbo,53.92,47.34,21.56,43.30,54.38,FALSE,https://www.baichuan-ai.com/home
+PaLM,30.59,26.84,28.00,30.04,46.29,FALSE,https://developers.googleblog.com/2023/03/announcing-palm-api-and-makersuite.html
+MiniMax-abab5,40.54,43.67,42.00,28.55,55.05,FALSE,https://api.minimax.chat/document/guides/chat-pro?id=64b79fa3e74cddc5215939f4
+DeepSeek-67B,42.11,55.00,45.56,31.68,59.36,TRUE,https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat
+Qwen-72B-Chat,42.64,54.67,44.00,27.86,58.48,TRUE,https://huggingface.co/Qwen/Qwen-72B-Chat
+Mixtral-8x7B-instruct-v0.1,51.00,43.34,43.78,18.27,55.44,TRUE,https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1
+Llama2-70B-Chat,32.79,42.34,21.11,28.32,48.50,TRUE,https://huggingface.co/meta-llama/Llama-2-70b-chat-hf
+WizardLM-70B-v1.0,38.26,6.50,21.78,20.18,39.38,TRUE,https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1
+InternLM2-20B-Chat,58.61,50.50,44.67,8.21,57.15,TRUE,https://huggingface.co/internlm/internlm2-chat-20b
+Yi-34B-Chat,42.92,11.00,9.56,30.11,39.27,TRUE,https://huggingface.co/01-ai/Yi-34B-Chat
+Vicuna-33B-v1.3,25.67,30.50,11.33,26.4,41.97,TRUE,https://huggingface.co/lmsys/vicuna-33b-v1.3
+Qwen-14B-Chat,14.32,38.00,15.78,10.72,44.96,TRUE,https://huggingface.co/Qwen/Qwen-14B-Chat
+Llama2-13B-Chat,30.61,24.67,22.67,31.02,44.54,TRUE,https://huggingface.co/meta-llama/Llama-2-13b-chat-hf
+Baichuan2-13B,-6.7,31.33,2.44,14.90,34.47,TRUE,https://huggingface.co/baichuan-inc/Baichuan2-13B-Chat
+WizardLM-13B-v1.2,0.15,24.50,0.89,22.68,34.20,TRUE,https://huggingface.co/WizardLM/WizardLM-13B-V1.2
+Auto-J-13B,36.05,0,49.33,0,42.69,TRUE,https://huggingface.co/GAIR/autoj-13b
+UltraCM-13B,21.51,0,38.00,0,29.76,TRUE,https://huggingface.co/openbmb/UltraCM-13b
+UltraRM-13B,52.33,0,54.67,0,53.5,TRUE,https://huggingface.co/openbmb/UltraRM-13b
+Ziya-7B,25.81,0,40.00,0,32.91,TRUE,https://huggingface.co/IDEA-CCNL/Ziya-LLaMA-7B-Reward
+SteamSHP,7.09,0,34.00,0,20.55,TRUE,https://huggingface.co/stanfordnlp/SteamSHP-flan-t5-xl
+Mistral-7B-instruct-v0.2,43.66,38.17,27.88,30.29,50.76,TRUE,https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
+InternLM2-7B-Chat,49.09,36.17,23.78,3.66,51.63,TRUE,https://huggingface.co/internlm/internlm2-chat-7b
+DeepSeek-7B,8.26,35.00,19.33,4.44,40.17,TRUE,https://huggingface.co/deepseek-ai/deepseek-llm-7b-chat
+Yi-6B-Chat,4.32,9.50,18.00,11.73,33.88,TRUE,https://huggingface.co/01-ai/Yi-6B-Chat
+ChatGLM3-6B,12.52,30.50,4.00,1.53,35.38,TRUE,https://huggingface.co/THUDM/chatglm3-6b
+Llama2-7B-Chat,20.81,21.00,5.33,5.67,34.89,TRUE,https://huggingface.co/meta-llama/Llama-2-7b-chat-hf
+Qwen-7B-Chat,-8.09,32.33,5.33,11.73,34.87,TRUE,https://huggingface.co/Qwen/Qwen-7B-Chat
+Vicuna-7B-v1.3,-5.3,13.83,7.11,-4.1,33.17,TRUE,https://huggingface.co/lmsys/vicuna-7b-v1.3
+Baichuan2-7B-Chat,3.58,18.00,7.11,3.14,32.12,TRUE,https://huggingface.co/baichuan-inc/Baichuan2-7B-Chat

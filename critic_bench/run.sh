@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# export OPENAI_API_KEY=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
-export OPENAI_API_KEY=...
-
 echo "mode: $1"    # feedback, correction, comp_feedback, meta_feedback
 echo "format: $2"    # sub, obj
 echo "set: $3"    # test, dev
