@@ -1,0 +1,9 @@
+datasets==2.16.1
+fschat==0.2.20
+ipdb==0.13.13
+ray==3.0.0.dev0
+Requests==2.31.0
+torch==1.13.1+cu117
+tqdm==4.65.0
+transformers==4.32.0
+vllm==0.1.4
