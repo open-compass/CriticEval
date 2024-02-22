@@ -107,7 +107,7 @@ for abbr, dataset in tqdm(datasets.items()):
         json.dump(results, f, ensure_ascii=False, indent=4)
 ```
 
-We only provide the inference codebase for our [InternLM2-7B-Chat](https://huggingface.co/internlm/internlm2-chat-7b), but it is easy to revise the inference code for evaluating your own LLMs (more details are in `inference/internlm2.py`).
+We only provide the inference codebase for our [InternLM2-7B-Chat](https://huggingface.co/internlm/internlm2-chat-7b), but it is easy to revise the inference code for evaluating your own LLMs (more details are in [`inference/internlm2.py`](./inference/internlm2.py)).
 
 #### Example Inference Data of Representative LLMs
 
