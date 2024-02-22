@@ -1,10 +1,10 @@
 # CriticBench: Evaluating Large Language Model as Critic
 
-This repository is the official implementation of [CriticBench](https://arxiv.org/abs/2307.04725), a comprehensive benchmark for evaluating critique ability of LLMs.
+This repository is the official implementation of [CriticBench](https://arxiv.org/abs/2402.13764), a comprehensive benchmark for evaluating critique ability of LLMs.
 
 ## Introduction
 
-**[CriticBench: Evaluating Large Language Model as Critic](https://arxiv.org/abs/2307.04725)** 
+**[CriticBench: Evaluating Large Language Model as Critic](https://arxiv.org/abs/2402.13764)** 
 </br>
 Tian Lan<sup>1*</sup>,
 Wenwei Zhang<sup>2*</sup>,
@@ -17,7 +17,7 @@ Xian-ling Mao<sup>1†</sup>
 
 <sup>1</sup> Beijing Institute of Technology, <sup>2</sup> Shanghai AI Laboratory
 
-[![arXiv](https://img.shields.io/badge/arXiv-2307.04725-b31b1b.svg)](https://arxiv.org/abs/2307.04725)
+[![arXiv](https://img.shields.io/badge/arXiv-2307.04725-b31b1b.svg)](https://arxiv.org/abs/2402.13764)
 [![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
 
 [[Dataset on HF](https://huggingface.co/datasets/GMFTBY/CriticBench)]
