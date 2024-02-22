@@ -182,7 +182,7 @@ The evaluation results of GPT-4 under `save_dir` is `jsonl`, and each line conta
 * 10 denotes the best performance
 * 8 denotes the comparable performance with our human-annotated high-quality critiques, and scores higher than 8 denotes the better performance of evaluated critiques.
 
-## 4. Benchmark Results
+## Benchmark Results
 
 The subjective evaluation results of some representation LLMs are shown:
 
@@ -194,22 +194,22 @@ The Objective evaluation results of some representation LLMs are shown:
 
 Refer to our [Project Page](https://open-compass.github.io/CriticBench/) for the complete evaluation results on <b>CriticBench</b>.
 
-## 5. Submit Your Results
+## Submit Your Results
 
 You can submit your inference results (via run codes under `inference` folder) to this [email](lantiangmftby@gmail.com). We will run your predictions and update the results in our leaderboard. Please also provide the scale of your tested model. A sample structure of your submission should be similar to that in `example_data`.
 
-## 6. Acknowledgements
+## Acknowledgements
 
 <b>CriticBench</b> is built with [OpenCompass](https://github.com/open-compass/opencompass). Thanks for their awesome work! 
 
 The quota for API-based LLMs are supported by Beijing Institute of Technology and Shanghai AI Laboratory. Thank you so much!
 
-## 7. Contact Us
+## Contact Us
 
 * **Tian Lan**: lantiangmftby@gmail.com
 * **Wenwei Zhang**: wenwei001@ntu.edu.sg
 
-## 8. BibTeX
+## BibTeX
 
 ```
 @misc{lan2024criticbench,
@@ -222,7 +222,7 @@ The quota for API-based LLMs are supported by Beijing Institute of Technology an
 }
 ```
 
-## 9. License
+## License
 
 This project is released under the Apache 2.0 [license](./LICENSE).
 
