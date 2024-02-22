@@ -22,7 +22,7 @@ Xian-ling Mao<sup>1†</sup>
 [![arXiv](https://img.shields.io/badge/arXiv-2307.04725-b31b1b.svg)](https://arxiv.org/abs/2307.04725)
 [![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
 
-[[[Dataset on HF](https://huggingface.co/datasets/huggingface/badges/resolve/main/dataset-on-hf-sm.svg)](https://huggingface.co/datasets/GMFTBY/CriticBench)]
+[[Dataset on HF](https://huggingface.co/datasets/GMFTBY/CriticBench)]
 [[Project Page](https://open-compass.github.io/CriticBench/)]
 [[LeaderBoard](https://open-compass.github.io/CriticBench/leaderboard.html)]
 
