@@ -54,7 +54,10 @@ mkdir data
 cd data
 git clone https://huggingface.co/datasets/opencompass/CriticBench
 ```
-which get into the `data` folder and clone the CriticBench dataset
+which get into the `data` folder and clone the CriticBench dataset.
+Note that the human-annotated Likert scores, preference labels, and critiques in `test` set are excluded.
+You can submit your inference results on the `test` set (via run codes under `inference` folder) to this [email](lantiangmftby@gmail.com). We will run your predictions and update the results in our leaderboard. Please also provide the scale of your tested model. 
+The structure of your submission should be similar to that in `example_data`.
 
 #### 1.2 Prepare Code and Env
 
@@ -197,9 +200,6 @@ The Objective evaluation results of some representation LLMs are shown:
 
 Refer to our [Project Page](https://open-compass.github.io/CriticBench/) for the complete evaluation results on <b>CriticBench</b>.
 
-## Submit Your Results
-
-You can submit your inference results (via run codes under `inference` folder) to this [email](lantiangmftby@gmail.com). We will run your predictions and update the results in our leaderboard. Please also provide the scale of your tested model. A sample structure of your submission should be similar to that in `example_data`.
 
 ## Acknowledgements
 
