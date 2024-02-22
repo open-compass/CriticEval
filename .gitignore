@@ -159,6 +159,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+data/*
+data/
 example_data/*
 !example_data/prediction_v1.3.tgz
 inference/outputs
