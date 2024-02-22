@@ -44,14 +44,17 @@ Xian-ling Mao<sup>1†</sup>
 
 ## Quick Start
 
-The CriticBench dataset are released in [data/criticbench_v1.3](./data/criticbench_v1.3), containing evaluation samples for `test` and `dev` split.
-
 ### 1. Prepare
 
 #### 1.1 Prepare Dataset
 
-We have provided the `test` and `dev` set of CriticBench in this repo [data/criticbench_v1.3](./data/criticbench_v1.3).
-You can also download the dataset from [huggingface dataset](https://huggingface.co/datasets/GMFTBY/CriticBench).
+Download the dataset from [huggingface dataset](https://huggingface.co/datasets/opencompass/CriticBench) by running this command:
+```bash
+mkdir data
+cd data
+git clone https://huggingface.co/datasets/opencompass/CriticBench
+```
+which get into the `data` folder and clone the CriticBench dataset
 
 #### 1.2 Prepare Code and Env
 
@@ -163,7 +166,7 @@ Then, running the following codes for evaluation:
 In [run.sh](critic_bench/run.sh) file, you could find the corresponding commands for objective and subjective evaluation process. 
 For example, for the feedback critique dimension, the objective evaluation is like:
 ```bash
-python run_feedback.py --root_dir "../data/criticbench_v1.3" --prediction_dir "../example_data/prediction_v1.3" --split $3 --obj True
+python run_feedback.py --root_dir "../data/CriticBench" --prediction_dir "../example_data/prediction_v1.3" --split $3 --obj True
 ```
 * `root_dir` contains the path of the `test` and `dev` set in CriticBench.
 * `prediction_dir` contains the inference results of LLMs to be evaluated. We also provide the inference results of some representation LLMs  in `example_data`. If you want to evaluate your own LLMs, please refer to `inference/README.md` for more details, and the `prediction_dir` could be set as `../inference/outputs`.
@@ -172,9 +175,9 @@ python run_feedback.py --root_dir "../data/criticbench_v1.3" --prediction_dir ".
 
 For the subjective evaluation of the feedback critique dimension, the evaluation command is like:
 ```bash
-python run_feedback.py --root_dir "../data/criticbench_v1.3" --prediction_dir "../example_data/prediction_v1.3" --evaluation_dir "../example_data/evaluation_v1.3/" --batch_size 1 --split $3 --obj False
+python run_feedback.py --root_dir "../data/CriticBench" --prediction_dir "../example_data/prediction_v1.3" --evaluation_dir "../example_data/evaluation_v1.3/" --batch_size 1 --split $3 --obj False
 ```
-* `evaluation_dir` saves the subjective evaluation scores of GPT-4, which can be re-loaded if the subjective evaluation process borke off. The order of the samples in each file in `evaluation_dir` follows the order in the original data in CriticBench (`data/criticbench_v1.3`).
+* `evaluation_dir` saves the subjective evaluation scores of GPT-4, which can be re-loaded if the subjective evaluation process borke off. The order of the samples in each file in `evaluation_dir` follows the order in the original data in CriticBench (`data/CriticBench`).
 * `batch_size` controls the number of the process for access GPT-4 API under multiprocessing setting.
 
 The evaluation results of GPT-4 under `save_dir` is `jsonl`, and each line contains the evaluation results. The chain-of-thought evaluation results prompted by GPT-4 is in the `evaluation` key-value in each line, which is a `dict` consisting of the chain-of-thought rationale about GPT-4 (key-value `cot`) and a Likert score (key-value `score`) for each critiques, ranging from 1 to 10.
