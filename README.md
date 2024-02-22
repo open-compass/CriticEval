@@ -192,7 +192,7 @@ The Objective evaluation results of some representation LLMs are shown:
 
 <img src="./figs/objective_score.png" alt="objective" align=center />
 
-Refer to our [Project Page](https://open-compass.github.io/CriticBench/) for the evaluation results of the complete models.
+Refer to our [Project Page](https://open-compass.github.io/CriticBench/) for the complete evaluation results on <b>CriticBench</b>.
 
 ## 5. Submit Your Results
 
