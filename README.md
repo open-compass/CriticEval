@@ -17,8 +17,6 @@ Xian-ling Mao<sup>1†</sup>
 
 <sup>1</sup> Beijing Institute of Technology, <sup>2</sup> Shanghai AI Laboratory
 
-<!-- [Arxiv Report](https://arxiv.org/abs/2307.04725) | [Project Page](https://animatediff.github.io/) -->
-
 [![arXiv](https://img.shields.io/badge/arXiv-2307.04725-b31b1b.svg)](https://arxiv.org/abs/2307.04725)
 [![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
 
@@ -46,13 +44,13 @@ Xian-ling Mao<sup>1†</sup>
 
 ## Quick Start
 
-The CriticBench dataset are released in `data/criticbench_v1.3`, containing evaluation samples for `test` and `dev` split.
+The CriticBench dataset are released in [data/criticbench_v1.3](./data/criticbench_v1.3), containing evaluation samples for `test` and `dev` split.
 
 ### 1. Prepare
 
 #### 1.1 Prepare Dataset
 
-We have provided the `test` and `dev` set of CriticBench in this repo `data/criticbench_v1.3`.
+We have provided the `test` and `dev` set of CriticBench in this repo [data/criticbench_v1.3](./data/criticbench_v1.3).
 You can also download the dataset from [huggingface dataset](https://huggingface.co/datasets/GMFTBY/CriticBench).
 
 #### 1.2 Prepare Code and Env
@@ -70,7 +68,7 @@ pip install -r requirements.txt
 ### 2. Inference LLMs on CriticBench
 
 You need to inference LLMs to be evaluated on our proposed CriticBench, and generation results on CriticBench can be found in `inference/outputs` folder. 
-If you are interested with our prompts for LLM, they are shown in `inference/utils/prompts.py`.
+If you are interested with our prompts for LLM, they are shown in [inference/utils/prompts.py](inference/utils/prompts.py).
 Specifically, the inference code should be like:
 ```python
 # this line loads all the evaluation dataset in CriticBench from `inference/utils`
@@ -107,11 +105,11 @@ for abbr, dataset in tqdm(datasets.items()):
         json.dump(results, f, ensure_ascii=False, indent=4)
 ```
 
-We only provide the inference codebase for our [InternLM2-7B-Chat](https://huggingface.co/internlm/internlm2-chat-7b), but it is easy to revise the inference code for evaluating your own LLMs (more details are in [`inference/internlm2.py`](./inference/internlm2.py)).
+We only provide the inference codebase for our [InternLM2-7B-Chat](https://huggingface.co/internlm/internlm2-chat-7b), but it is easy to revise the inference code for evaluating your own LLMs (more details are in [inference/internlm2.py](./inference/internlm2.py)).
 
 #### Example Inference Data of Representative LLMs
 
-We have already released the generation results of some representative LLMs on CriticBench, and you could found them in `example_data/prediction_v1.3.tgz`.
+We have already released the generation results of some representative LLMs on CriticBench, and you could found them in [example_data/prediction_v1.3.tgz](example_data/prediction_v1.3.tgz).
 
 ```bash
 tar -xzvf example_data/prediction_v1.3.tgz
@@ -135,7 +133,7 @@ The format of the evaluation result file is:
 ### 3. Compute the Evaluation Results on CriticBench
 
 After getting the generation results under `inference/outputs`, your next step is to compute the objective and subjective scores in our proposed CriticBench using our toolkit.
-See more details about the objective and subjective scores in Section 4 of [our paper]().
+See more details about the objective and subjective scores in Section 4 of our paper.
 
 We provide two ways for computing the `objective` and `subjective` scores in `critic_bench` folder.
 * Objective scores could be computed automatically without any cost
@@ -145,7 +143,7 @@ We provide two ways for computing the `objective` and `subjective` scores in `cr
 
 It is easy to compute the scores by running following commands.
 
-Before running this code, please make sure that your own OpenAI API key in `critic_bench/run.sh` is set.
+Before running this code, please make sure that your own OpenAI API key in [critic_bench/run.sh](critic_bench/run.sh) is set.
 
 ```bash
 export OPENAI_API_KEY=...
@@ -162,7 +160,7 @@ Then, running the following codes for evaluation:
 * `split` denotes the `test` or `dev` set to be evaluated.
 * `save_dir` is any text path saving the evaluation results.
 
-In `run.sh` file, you could find the corresponding commands for objective and subjective evaluation process. 
+In [run.sh](critic_bench/run.sh) file, you could find the corresponding commands for objective and subjective evaluation process. 
 For example, for the feedback critique dimension, the objective evaluation is like:
 ```bash
 python run_feedback.py --root_dir "../data/criticbench_v1.3" --prediction_dir "../example_data/prediction_v1.3" --split $3 --obj True
@@ -226,5 +224,5 @@ The quota for API-based LLMs are supported by Beijing Institute of Technology an
 
 ## 9. License
 
-This project is released under the Apache 2.0 [license](./LICESE).
+This project is released under the Apache 2.0 [license](./LICENSE).
 
