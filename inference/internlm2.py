@@ -17,7 +17,7 @@ import argparse
 def parser_args():
     parser = argparse.ArgumentParser(description='train parameters')
     parser.add_argument('--output_dir', type=str, default='outputs')
-    parser.add_argument('--data_dir', type=str, default='../data/criticbench_v1.3')
+    parser.add_argument('--data_dir', type=str, default='../data/CriticBench')
     parser.add_argument('--split', type=str, default='test')
     parser.add_argument('--mode_name', type=str, default='feedback')
     parser.add_argument('--set_name', type=str, default='translate')
