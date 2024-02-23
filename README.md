@@ -195,7 +195,7 @@ The subjective evaluation results of some representation LLMs are shown:
 
 <img src="./figs/subjective_score.png" alt="sujective" align=center />
 
-The Objective evaluation results of some representation LLMs are shown:
+The objective evaluation results of some representation LLMs are shown:
 
 <img src="./figs/objective_score.png" alt="objective" align=center />
 
