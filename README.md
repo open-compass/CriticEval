@@ -210,7 +210,7 @@ The quota for API-based LLMs are supported by Beijing Institute of Technology an
 ## Contact Us
 
 * **Tian Lan**: lantiangmftby@gmail.com
-* **Wenwei Zhang**: wenwei001@ntu.edu.sg
+* **Wenwei Zhang**: zhangwenwei@pjlab.org.cn
 
 ## BibTeX
 
