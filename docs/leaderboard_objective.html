@@ -27,7 +27,8 @@
       background-color: #FFFFFF;
       color: #000000;
     }
-    .paper-btn {
+
+    .paper-btn-big {
       position: relative;
       text-align: center;
 
@@ -42,7 +43,26 @@
       background-color: #E0F7FA;
       color: #01579B !important;
       font-size: 20px;
-      width: 200px;
+      width: 250px;
+      font-weight: 600;
+    }
+
+    .paper-btn-small {
+      position: relative;
+      text-align: center;
+
+      display: inline-block;
+      margin: 8px;
+      padding: 8px 8px;
+
+      border-width: 0;
+      outline: none;
+      border-radius: 2px;
+  
+      background-color: #E0F7FA;
+      color: #01579B !important;
+      font-size: 20px;
+      width: 100px;
       font-weight: 600;
     }
 
@@ -172,19 +192,19 @@
     <h3 class="fw-light text-nowrap"><small id="warning">CriticBench comprehensively evaluates 4 critique dimensions of LLMs on 9 widely-used tasks with multiple response qualities.<br></small></h3>
     <div style="clear: both">
       <div class="paper-btn-parent">
-      <a class="paper-btn" href="https://arxiv.org/abs/2402.13764">
+      <a class="paper-btn-small" href="https://arxiv.org/abs/2402.13764">
           <span class="material-icons"> description </span> 
            Paper
       </a>
-      <a class="paper-btn" href="https://github.com/open-compass/CriticBench">
+      <a class="paper-btn-small" href="https://github.com/open-compass/CriticBench">
           <span class="material-icons"> code </span>
           Code
       </a>
-      <a class="paper-btn" href="./index.html">
+      <a class="paper-btn-big" href="./index.html">
           <span class="material-icons"> description </span> 
            Project Page
       </a>
-      <a class="paper-btn" href="./leaderboard_subjective.html">
+      <a class="paper-btn-big" href="./leaderboard_subjective.html">
           <span class="material-icons"> description</span> 
           Subjective Leaderboard
       </a>

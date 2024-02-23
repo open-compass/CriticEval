@@ -236,9 +236,10 @@ figure {
   margin-right: 10.0%;
 }
 
-.paper-btn {
+.paper-btn-small {
   position: relative;
   text-align: center;
+  vertical-align: center;
 
   display: inline-block;
   margin: 8px;
@@ -251,7 +252,29 @@ figure {
   background-color: #E0F7FA;
   color: #01579B !important;
   font-size: 20px;
-  width: 200px;
+  width: 100px;
+  font-weight: 600;
+}
+
+
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+  vertical-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #E0F7FA;
+  color: #01579B !important;
+  font-size: 20px;
+  width: 250px;
   font-weight: 600;
 }
 
@@ -433,12 +456,16 @@ pre {
 
 .left-column {
     float: left;
-    width: 25%;
+    width: 5%;
+    text-align: center;
+    vertical-align: center;
 }
 
 .right-column {
     float: right;
-    width: 75%;
+    width: 95%;
+    text-align: center;
+    vertical-align: center;
 }
 
 </style>
@@ -481,23 +508,27 @@ pre {
 
         </center>
 
-        <div style="clear: both">
+        <div>
             <div class="paper-btn-parent">
-            <a class="paper-btn" href="https://arxiv.org/abs/2312.14033">
+            <a class="paper-btn-small" href="https://arxiv.org/abs/2402.13764">
                 <span class="material-icons"> description </span> 
-                 Paper
+                Paper
             </a>
-            <a class="paper-btn" href="https://github.com/open-compass/CriticBench">
+            <a class="paper-btn-small" href="https://github.com/open-compass/CriticBench">
                 <span class="material-icons"> code </span>
                 Code
             </a>
             <a class="paper-btn" href="./leaderboard_subjective.html">
-                <span class="material-icons"> description </span> 
-                 Subjective Leaderboard
+                <nobr>
+                    <span class="material-icons"> description </span>
+                    Subjective Leaderboard
+                </nobr>
             </a>
             <a class="paper-btn" href="./leaderboard_objective.html">
-                <span class="material-icons"> description </span> 
-                 Objective Leaderboard
+                <nobr>
+                    <span class="material-icons"> description </span>
+                    Objective Leaderboard
+                </nobr>
             </a>
             </div>
         </div>
@@ -572,7 +603,7 @@ pre {
     <h2 style="text-align: center;">Result</h2>
     <div class="flex-row-center">
         <p>
-        You can find the newest <a href="./leaderboard_subjective.html">subjective</a> and <a href="./leaderboard_subjective.html">objective</a> leaderboards of our CriticBench.
+        You can find the newest <a href="./leaderboard_subjective.html">subjective</a> and <a href="./leaderboard_objective.html">objective</a> leaderboards of our CriticBench.
         </p>
         <br>
     </section>   
