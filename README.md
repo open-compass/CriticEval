@@ -22,7 +22,8 @@ Xian-ling Mao<sup>1†</sup>
 
 [[Dataset on HF](https://huggingface.co/datasets/opencompass/CriticBench)]
 [[Project Page](https://open-compass.github.io/CriticBench/)]
-[[LeaderBoard](https://open-compass.github.io/CriticBench/leaderboard.html)]
+[[Subjective LeaderBoard](https://open-compass.github.io/CriticBench/leaderboard_subjective.html)]
+[[Objective LeaderBoard](https://open-compass.github.io/CriticBench/leaderboard_objective.html)]
 
 > Critique ability are crucial in the scalable oversight and self-improvement of Large Language Models (LLMs). While many recent studies explore the critique ability of LLMs to judge and refine flaws in generations, how to comprehensively and reliably measure the critique abilities of LLMs is under-explored. This paper introduces <b>CriticBench</b>, a novel benchmark designed to comprehensively and reliably evaluate four key critique ability dimensions of LLMs: feedback, comparison, refinement and meta-feedback. <b>CriticBench</b> encompasses nine diverse tasks, each assessing the LLMs' ability to critique responses at varying levels of quality granularity. Our extensive evaluations of open-source and closed-source LLMs reveal intriguing relationships between the critique ability and tasks, response qualities, and model scales.
 
