@@ -1,10 +1,10 @@
-# CriticBench: Evaluating Large Language Model as Critic
+# CriticBench: Evaluating Large Language Models as Critic
 
 This repository is the official implementation of [CriticBench](https://arxiv.org/abs/2402.13764), a comprehensive benchmark for evaluating critique ability of LLMs.
 
 ## Introduction
 
-**[CriticBench: Evaluating Large Language Model as Critic](https://arxiv.org/abs/2402.13764)** 
+**[CriticBench: Evaluating Large Language Models as Critic](https://arxiv.org/abs/2402.13764)** 
 </br>
 Tian Lan<sup>1*</sup>,
 Wenwei Zhang<sup>2*</sup>,
