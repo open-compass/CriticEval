@@ -21,9 +21,9 @@ Xian-ling Mao<sup>1†</sup>
 [![license](https://img.shields.io/github/license/InternLM/opencompass.svg)](./LICENSE)
 
 [[Dataset on HF](https://huggingface.co/datasets/opencompass/CriticBench)]
-[[Project Page](https://open-compass.github.io/CriticBench/)]
-[[Subjective LeaderBoard](https://open-compass.github.io/CriticBench/leaderboard_subjective.html)]
-[[Objective LeaderBoard](https://open-compass.github.io/CriticBench/leaderboard_objective.html)]
+[[Project Page](https://open-compass.github.io/CriticEval/)]
+[[Subjective LeaderBoard](https://open-compass.github.io/CriticEval/leaderboard_subjective.html)]
+[[Objective LeaderBoard](https://open-compass.github.io/CriticEval/leaderboard_objective.html)]
 
 > Critique ability are crucial in the scalable oversight and self-improvement of Large Language Models (LLMs). While many recent studies explore the critique ability of LLMs to judge and refine flaws in generations, how to comprehensively and reliably measure the critique abilities of LLMs is under-explored. This paper introduces <b>CriticEval</b>, a novel benchmark designed to comprehensively and reliably evaluate four key critique ability dimensions of LLMs: feedback, comparison, refinement and meta-feedback. <b>CriticEval</b> encompasses nine diverse tasks, each assessing the LLMs' ability to critique responses at varying levels of quality granularity. Our extensive evaluations of open-source and closed-source LLMs reveal intriguing relationships between the critique ability and tasks, response qualities, and model scales.
 
@@ -216,13 +216,14 @@ The quota for API-based LLMs are supported by Beijing Institute of Technology an
 ## BibTeX
 
 ```
-@misc{lan2024criticbench,
-      title={CriticEval: Evaluating Large Language Models as Critic}, 
+@misc{lan2024criticevalevaluatinglargelanguage,
+      title={CriticEval: Evaluating Large Language Model as Critic}, 
       author={Tian Lan and Wenwei Zhang and Chen Xu and Heyan Huang and Dahua Lin and Kai Chen and Xian-ling Mao},
       year={2024},
       eprint={2402.13764},
       archivePrefix={arXiv},
-      primaryClass={cs.CL}
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2402.13764}, 
 }
 ```
 
