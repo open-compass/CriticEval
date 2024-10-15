@@ -473,7 +473,7 @@ pre {
 <script type="text/javascript"></script>
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
     <head>
-        <title> CriticBench: Evaluating Large Language Model as Critic </title>
+        <title> CriticEval: Evaluating Large Language Model as Critic </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:description" content="A comprehensive benchmark for evaluating critique ability of LLMs"/>
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
@@ -485,7 +485,7 @@ pre {
 <div class="container">
     <div class="paper-title">
     <h1> 
-        CriticBench: Evaluating Large Language Model as Critic
+        CriticEval: Evaluating Large Language Model as Critic
     </div>
 
     <div id="authors">
@@ -514,7 +514,7 @@ pre {
                 <span class="material-icons"> description </span> 
                 Paper
             </a>
-            <a class="paper-btn-small" href="https://github.com/open-compass/CriticBench">
+            <a class="paper-btn-small" href="https://github.com/open-compass/CriticEval">
                 <span class="material-icons"> code </span>
                 Code
             </a>
@@ -537,7 +537,7 @@ pre {
         <h2 style="text-align: center;">Abstract</h2>
         <div class="flex-row" style="width: 75%; margin: 0 auto;">
             <p>
-                Critique ability are crucial in the scalable oversight and self-improvement of Large Language Models (LLMs). While many recent studies explore the critique ability of LLMs to judge and refine flaws in generations, how to comprehensively and reliably measure the critique abilities of LLMs is under-explored. This paper introduces <b>CriticBench</b>, a novel benchmark designed to comprehensively and reliably evaluate four key critique ability dimensions of LLMs: feedback, comparison, refinement and meta-feedback. <b>CriticBench</b> encompasses nine diverse tasks, each assessing the LLMs' ability to critique responses at varying levels of quality granularity. Our extensive evaluations of open-source and closed-source LLMs reveal intriguing relationships between the critique ability and tasks, response qualities, and model scales.
+                Critique ability are crucial in the scalable oversight and self-improvement of Large Language Models (LLMs). While many recent studies explore the critique ability of LLMs to judge and refine flaws in generations, how to comprehensively and reliably measure the critique abilities of LLMs is under-explored. This paper introduces <b>CriticEval</b>, a novel benchmark designed to comprehensively and reliably evaluate four key critique ability dimensions of LLMs: feedback, comparison, refinement and meta-feedback. <b>CriticEval</b> encompasses nine diverse tasks, each assessing the LLMs' ability to critique responses at varying levels of quality granularity. Our extensive evaluations of open-source and closed-source LLMs reveal intriguing relationships between the critique ability and tasks, response qualities, and model scales.
             </p>
         </div>
     </section>
@@ -550,7 +550,7 @@ pre {
                     <img width="65%" src="figure/comparison.png"> 
                 </a>
                 <p class="caption", style="text-align: center;">
-                    Figure 1. Comparison between <b>CriticBench</b> and previous works.
+                    Figure 1. Comparison between <b>CriticEval</b> and previous works.
                 </p>
             </figure>
         </center>
@@ -559,10 +559,10 @@ pre {
     <section id="evaluation protocol"/>
         <h2 style="text-align: center;">Introduction</h2>
             <p>
-                <b>CriticBench</b> evaluate 9 tasks (<b>translate, general chat, question answer, summary, harmlessness, math with chain-of-thought, math with program-of-thought, code with executions, code without executions</b>) for 4 critique dimensions (<b>Feedback, Comparison, Correction, Meta-Feedback</b>) on 4 kinds of response qualities (<b>low-quality, medium-quality, high-quality, correct</b>). Besides, the objective and subjective scores are computed for each task and each critique dimensions.
+                <b>CriticEval</b> evaluate 9 tasks (<b>translate, general chat, question answer, summary, harmlessness, math with chain-of-thought, math with program-of-thought, code with executions, code without executions</b>) for 4 critique dimensions (<b>Feedback, Comparison, Correction, Meta-Feedback</b>) on 4 kinds of response qualities (<b>low-quality, medium-quality, high-quality, correct</b>). Besides, the objective and subjective scores are computed for each task and each critique dimensions.
                 
             <p>
-            Overall, <b>CriticBench</b> exhibits significant advantages over previous benchmarks on critique evaluation (Fig. 1), showing great diversity in response quality granularity, critique formats, critique dimensions, and data size, allowing deeper analysis of the LLMs' critique capabilities.
+            Overall, <b>CriticEval</b> exhibits significant advantages over previous benchmarks on critique evaluation (Fig. 1), showing great diversity in response quality granularity, critique formats, critique dimensions, and data size, allowing deeper analysis of the LLMs' critique capabilities.
             </p>
             </p>
         </div>
@@ -579,7 +579,7 @@ pre {
                     <img width="95%" src="figure/overview.png"> 
                 </a>
                 <p class="caption", style="text-align: center;">
-                    Figure 2. Overview and Construction Pipeline of <b>CriticBench</b>.
+                    Figure 2. Overview and Construction Pipeline of <b>CriticEval</b>.
                 </p>
             </figure>
         </center>
@@ -587,11 +587,11 @@ pre {
      
     <div class="flex-row">
         <p>
-        The human-in-the-loop construction of <b>CriticBench</b> are conducted. <b>CriticBench</b> consists of three main phases: <b>instruction collection</b>, <b>response generation</b>, and <b>reference critique generation</b>. The overview of the construction is shown in Fig. 2., and the details of each phase are described as follow:
+        The human-in-the-loop construction of <b>CriticEval</b> are conducted. <b>CriticEval</b> consists of three main phases: <b>instruction collection</b>, <b>response generation</b>, and <b>reference critique generation</b>. The overview of the construction is shown in Fig. 2., and the details of each phase are described as follow:
         </p>
         <p class="inline-block mt-3">
             <ol>
-              <li><b>Instruction collection:</b> Instructions for 9 distinct tasks are collected to evaluate critique capabilities comprehensively (Step 1 in Fig. 2). Specifically, the benchmark includes three representative classical language tasks: summary, translation, and question-answering. Since a popular application of LLMs is to serve as a chatbot, where alignment is important to ensure the safe application of LLMs, we collect instructions from general chat scenarios and harmlessness cases to evaluate the LLMs' critique ability for alignment. Furthermore, the reasoning and code capabilities are also fundamental for augmenting LLMs as agents, another important and promising application of LLMs. Thus, we also collect instructions for math reasoning with chain-of-thought and program-of-thought, and coding with and without execution results. To ensure the difficulty of <b>CriticBench</b>, we only collect coding and math reasoning questions that some 70B LLMs cannot correctly answer.</li>
+              <li><b>Instruction collection:</b> Instructions for 9 distinct tasks are collected to evaluate critique capabilities comprehensively (Step 1 in Fig. 2). Specifically, the benchmark includes three representative classical language tasks: summary, translation, and question-answering. Since a popular application of LLMs is to serve as a chatbot, where alignment is important to ensure the safe application of LLMs, we collect instructions from general chat scenarios and harmlessness cases to evaluate the LLMs' critique ability for alignment. Furthermore, the reasoning and code capabilities are also fundamental for augmenting LLMs as agents, another important and promising application of LLMs. Thus, we also collect instructions for math reasoning with chain-of-thought and program-of-thought, and coding with and without execution results. To ensure the difficulty of <b>CriticEval</b>, we only collect coding and math reasoning questions that some 70B LLMs cannot correctly answer.</li>
               <li><b>Response Generation:</b> For each collected instruction in each task, LLMs of different scales and capabilities are employed to generate responses with flaws, which naturally form responses of various qualities (Step 2 (a) in Fig. 2). To identify the quality of these responses efficiently, GPT-4 is utilized to initially assign quality ratings ranging from 1 to 7 (Step 2 (b) in Fig. 2.) then let human annotators meticulously review and adjust these scores. Subsequently, three responses with distinct quality differences for each instruction are chosen based on their human-varified quality scores, including low-, medium-, and high-quality responses.</li>
               <li><b>Reference Critique Generation:</b> After collecting instructions and the corresponding responses, we collect reference critiques on these responses to make the subjective evaluation more reliable, with the assistance of GPT-4, including the feedback, correction, comparison, and meta-feedback. Note that correction and meta-feedback critique dimensions are overlooked in previous works.</li>
             </ol>
@@ -603,7 +603,7 @@ pre {
     <h2 style="text-align: center;">Result</h2>
     <div class="flex-row-center">
         <p>
-        You can find the newest <a href="./leaderboard_subjective.html">subjective</a> and <a href="./leaderboard_objective.html">objective</a> leaderboards of our CriticBench.
+        You can find the newest <a href="./leaderboard_subjective.html">subjective</a> and <a href="./leaderboard_objective.html">objective</a> leaderboards of our CriticEval.
         </p>
         <br>
     </section>   
