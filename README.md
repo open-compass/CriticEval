@@ -31,6 +31,7 @@ Xian-ling Mao<sup>1†</sup>
 
 ## What's New
 
+* **[2024.9.25]** CriticEval is accepted by NeurIPS 2024🥳🥳🥳
 * **[2024.2.21]** Release paper, codes, data and other resources of CriticEval v1.3.
 
 ## Next
