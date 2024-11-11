@@ -54,7 +54,7 @@ Download the dataset from [huggingface dataset](https://huggingface.co/datasets/
 ```bash
 mkdir data
 cd data
-git clone https://huggingface.co/datasets/opencompass/CriticEval
+git clone https://huggingface.co/datasets/opencompass/CriticBench
 ```
 which get into the `data` folder and clone the CriticEval dataset.
 Note that the human-annotated Likert scores, preference labels, and critiques in `test` set are excluded.
