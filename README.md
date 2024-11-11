@@ -190,6 +190,15 @@ The evaluation results of GPT-4 under `save_dir` is `jsonl`, and each line conta
 * 10 denotes the best performance
 * 8 denotes the comparable performance with our human-annotated high-quality critiques, and scores higher than 8 denotes the better performance of evaluated critiques.
 
+
+To compute the overall score, please run this command:
+```bash
+# the results of GPT-4 on the test set
+python compute_overall.py --mode obj --feedback_overall 63.54 --correction_overall 69.67 --comp_feedback_overall 57.33 --meta_feedback_overall 62.90
+```
+* replacing the `mode` with `sub` could compute the overall score for subjective evaluation
+* ensure that at least one dimension's overall score is provided among the four dimensions
+
 ## Benchmark Results
 
 The subjective evaluation results of some representation LLMs are shown:

@@ -162,5 +162,5 @@ cython_debug/
 data/*
 data/
 example_data/*
-!example_data/prediction_v1.3.tgz
+!example_data/deepseek-67b-chat-hf-prediction.tgz
 inference/outputs
