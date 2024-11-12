@@ -78,7 +78,7 @@ def evaluate_meta_feedback_obj(
 
 if __name__ == "__main__":
     args = vars(parser_args())
-    evaluate_obj(
+    evaluate_meta_feedback_obj(
         args['root_dir'],
         args['prediction_dir'],
         ignore_models=args['ignore_models'],

@@ -87,7 +87,8 @@ def evaluate_correction_sub(
         'qa',
         'summary',
         'harmlessness'
-    ]
+    ],
+    fast_mode=False
 ):
     # init the OpenAI API Key
     openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -165,8 +166,9 @@ def evaluate_correction_sub(
 
 if __name__ == "__main__":
     args = vars(parser_args())
+    args['fast_mode'] = eval(args['fast_mode'])
     if args['obj'] == 'True':
-        evaluate_obj(
+        evaluate_correction_obj(
             args['root_dir'],
             args['prediction_dir'],
             ignore_models=args['ignore_models'],
@@ -174,7 +176,7 @@ if __name__ == "__main__":
             split=args['split']
         )
     else:
-        evaluate_sub(
+        evaluate_correction_sub(
             args['root_dir'],
             args['prediction_dir'],
             args['evaluation_dir'],
