@@ -63,6 +63,21 @@ def extract_decision(string):
     return decision
 
 
+def extract_decision_float(string):
+    try:
+        try:
+            decision = re.findall('Score: (\d+\.\d+|\d+)', string)
+            decision = float(decision[0])
+        except Exception as error:
+            try:
+                decision = float(decision.split()[0])
+            except:
+                decision = parse_math_result(string)
+    except:
+        decision = None
+    return decision
+
+
 def extract_decision_option(string):
     try:
         decision = re.findall('.*(Decision: .+)', string)[0].replace('Decision:', '').strip()
