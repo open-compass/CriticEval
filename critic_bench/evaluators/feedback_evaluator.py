@@ -185,7 +185,7 @@ class EvaluateNLFeedback(BaseEvaluator):
                             ],
                         } for i in cache], temp=0.0)
                         for rest, new_item in zip(rests, samples):
-                            score = extract_decision(rest)
+                            score = extract_decision_float(rest)
                             new_item['evaluation'] = {
                                 'cot': rest,
                                 'score': score
@@ -206,7 +206,7 @@ class EvaluateNLFeedback(BaseEvaluator):
                         ],
                     } for i in cache], temp=0.0)
                     for rest, new_item in zip(rests, samples):
-                        score = extract_decision(rest)
+                        score = extract_decision_float(rest)
                         new_item['evaluation'] = {
                             'cot': rest,
                             'score': score
